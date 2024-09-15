@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-sm-6 offset-md-3">
+        <h3>Login page</h3>
+        <hr />
+        <form [formGroup]="loginForm" (submit)="onLogin()">
+            <label>Username:</label>
+            <input type="text" class="form-control" formControlName="userName">
+            <div class="text-danger">
+                <span *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.hasError('required')">
+                    Username is required
+                </span>
+                <span *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.hasError('minlength')">
+                    Username should be atleast of 5 characters.
+                </span>
+            </div>
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <div class="text-danger">
+                {{validatePassword()}}
+            </div>
+            <br>
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button> &nbsp;
+            <button type="button" class="btn btn-success">Signup</button>
+        </form>
+    </div>
+</div>

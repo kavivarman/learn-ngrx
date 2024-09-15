@@ -1,0 +1,34 @@
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Sing up Form</h3>
+            <hr>
+        </div>
+        <form [formGroup]="signUp" (ngSubmit)="onSingUp()">
+            <div class="col-sm-6">
+                <label for="txtEmail" class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email" id="txtEmail">
+                <div class="alert alert-danger" *ngIf="signUp?.get('email')?.touched && signUp?.get('email')?.hasError('required')">
+                    Email is required
+                </div>
+                <div class="alert alert-danger" *ngIf="signUp?.get('email')?.touched && signUp?.get('email')?.hasError('inValidEmail')">
+                    Email is invalid, please enter valid email
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-6">
+                <label for="txtPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="txtPassword">
+                <div class="alert alert-danger" *ngIf="signUp?.get('password')?.touched && signUp?.get('password')?.hasError('required')">
+                    Password is required
+                </div>
+                <div class="alert alert-danger" *ngIf="signUp?.get('password')?.touched && signUp?.get('password')?.hasError('passwordStrength')">
+                    Password is weak, please enter the combination of upper, lower case & numeric with special character.
+                </div>
+            </div>
+            <br>
+            <button type="submit"[disabled]="!signUp.valid" class="btn btn-success">Sing Up</button> &nbsp;
+            <button type="button" (click)="clearSignup()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</div>

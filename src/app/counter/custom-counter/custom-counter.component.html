@@ -1,0 +1,16 @@
+<div class="row">
+    <div *ngIf="appName$ as ap" class="col-sm 12">
+        <br>
+        <p>Application Name: {{ap | async}}</p>
+        <br>
+        <input type="number" [(ngModel)] ="customIncrement" id="txtCustomCOunter">&nbsp;
+        <button type="button" class="btn btn-secondary" (click)="Add()">Add</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <input type="text" [(ngModel)]="txtAppName" id="txtAppName">&nbsp;
+        <button type="button" class="btn btn-secondary" (click)="ChangeAppName()">Change App Name</button>
+    </div>
+</div>

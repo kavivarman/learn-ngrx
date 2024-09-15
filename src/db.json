@@ -1,0 +1,18 @@
+{
+    "login": [
+        {
+            "userName": "Kavivarman@gmail.com",
+            "password": "Kavi",
+            "cookie": "ertyeyeywuewuewuyewuyyuyyuy",
+            "validity":"562",
+            "status": "success"
+        },
+        {
+            "userName": "Gayathri@gmail.com",
+            "password": "Gayu",
+            "cookie": "ertyeyeywuewdsdssddduewuyewuyyuyyuy",
+            "validity":"565",
+            "status": "success"
+        }
+    ]
+}
